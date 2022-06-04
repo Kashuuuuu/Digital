@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="text-pageheader">
+					<div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.0s">
+						 Contact
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</header>
+<!-- CONTENT =============================-->
+<section class="item content">
+<div class="container toparea">
+	<div class="underlined-title">
+		<div class="editContent">
+			<h1 class="text-center latestitems">Get in Touch</h1>
+		</div>
+		<div class="wow-hr type_short">
+			<span class="wow-hr-h">
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star"></i>
+			</span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<div class="done">
+				<div class="alert alert-success">
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					Your message has been sent. Thank you!
+				</div>
+			</div>
+			<form method="post"  id="contactform">
+				<div class="form">
+					<input type="text" name="name" placeholder="Your Name *">
+					<input type="text" name="email" placeholder="Your E-mail Address *">
+					<textarea name="comment" rows="7" placeholder="Type your Message *"></textarea>
+					<input type="submit" id="submit" class="clearfix btn" value="Send">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+</section>
+{% endblock  %}

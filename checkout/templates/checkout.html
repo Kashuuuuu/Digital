@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block content %} 
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="text-pageheader">
+					<div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.0s">
+						 Checkout
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</header>
+
+<!-- CONTENT =============================-->
+<section class="item content">
+<div class="container toparea">
+	<div class="underlined-title">
+		<div class="editContent">
+			<h1 class="text-center latestitems">MAKE PAYMENT</h1>
+		</div>
+		<div class="wow-hr type_short">
+			<span class="wow-hr-h">
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star"></i>
+			</span>
+		</div>
+	</div>
+	 <div id="edd_checkout_wrap" class="col-md-8 col-md-offset-2">
+		
+			<div id="edd_checkout_cart_wrap">
+				<table id="edd_checkout_cart" class="ajaxed">
+				<thead>
+				<tr class="edd_cart_header_row">
+					<th class="edd_cart_item_name">
+						Item Image
+				   </th>
+					<th class="edd_cart_item_name">
+						 Item Name
+					</th>
+					<th class="edd_cart_item_price">
+						 Item Price
+					</th>
+					<th class="edd_cart_item_price">
+						Quantity
+				   </th>
+
+				   <th class="edd_cart_item_price">
+					Item Price
+			   </th>
+					 
+				</tr>
+				</thead>
+				<tbody>			
+				
+					{% for pro,pric,qunt in list  %}
+					
+	
+				<tr class="edd_cart_item" id="edd_cart_item_0_25" data-download-id="25">
+					<td class="edd_cart_item_name">
+						<div class="edd_cart_item_image">
+							<img width="25" height="25" src="/media/{{pro.0.item_image}}" alt="">
+						</div>
+						<span class="edd_checkout_cart_item_title"></span>
+					</td>
+					<td class="edd_cart_item_price">
+						{{pro.0.item_name}}
+				   </td>
+				   <td class="edd_cart_item_price">
+					{{pro.0.item_price}}
+			   	</td>
+
+					<td class="edd_cart_item_price">
+						{{qunt}}
+					</td>
+						
+					<td class="edd_cart_item_price">
+						{{pric}}
+				   </td>
+					
+					
+					
+					
+				</tr>
+				
+				{% endfor %}
+				
+				</tbody>
+				<tfoot>
+				{% comment %} <tr class="edd_cart_footer_row">
+					<th colspan="5">
+						<a class="edd-cart-saving-button edd-submit button " id="edd-save-cart-button" href="#">Save Cart</a>
+					</th>
+				</tr> {% endcomment %}
+				<tr class="edd_cart_footer_row edd_cart_discount_row" style="display:none;">
+					<th colspan="5" class="edd_cart_discount">
+					</th>
+				</tr>
+				<tr class="edd_cart_footer_row">
+					<th colspan="5" class="edd_cart_total">
+						 Total: <span class="edd_cart_amount" data-subtotal="11.99" data-total="11.99">{{totalprice}}</span>
+					</th>
+				</tr>
+				</tfoot>
+				</table>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+			</div>
+	
+		 
+		<div id="edd_checkout_form_wrap" class="edd_clearfix"> 
+
+			<form id="edd_purchase_form" class="edd_form" action='{% url 'checkout' %}'  method="post">{% csrf_token %}
+				<fieldset id="edd_checkout_user_info">
+					<legend>Personal Info</legend>
+					<p id="edd-email-wrap">
+						<label class="edd-label" for="edd-email">
+						Email Address <span class="edd-required-indicator">*</span></label>
+						<input class="edd-input required" type="text" name="email" placeholder="Email address" id="edd-email" value="">
+					</p>
+					<p id="edd-first-name-wrap">
+						<label class="edd-label" for="edd-first">
+						 Name <span class="edd-required-indicator">*</span>
+						</label>
+						<input class="edd-input required" type="text" name="name" placeholder="First name" id="edd-first" value="" required="">
+					</p>
+					<p id="edd-last-name-wrap">
+						<label class="edd-label" for="edd-last">
+						Address </label>
+						<input class="edd-input" type="textarea" name="address" id="edd-last" placeholder="Address" value="">
+					</p>
+
+					<p id="edd-last-name-wrap">
+						<label class="edd-label" for="edd-last">
+						Phone </label>
+						<input class="edd-input" type="textarea" name="phone" id="edd-last" placeholder="Phone" value="">
+					</p>
+
+					
+			
+					<p id="edd_final_total_wrap">
+						<strong>Purchase Total:</strong>
+						<span class="edd_cart_amount" data-subtotal="11.99" data-total="11.99">{{totalprice}}</span>
+					</p>
+					<input type="hidden" name="paymentmode" value="COD">
+					<input type="hidden" name="edd_action" value="purchase">
+					<input type="hidden" name="edd-gateway" value="manual">
+					<a href="" type="submit" class="edd-submit button" id="edd-purchase-button" name="edd-purchase">Place Order | COD</a>
+				</fieldset>
+			</form>
+		</div>
+	 
+	</div> 
+
+	
+</div>
+</section>
+
+{% endblock  %}

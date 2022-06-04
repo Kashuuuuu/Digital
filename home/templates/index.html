@@ -1,0 +1,268 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="text-homeimage">
+					<div class="maintext-image" data-scrollreveal="enter top over 1.5s after 0.1s">
+						 Increase Digital Sales
+					</div>
+					<div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.3s">
+						 Boost revenue with Scorilo
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</header>
+
+
+ <!-- STEPS =============================-->
+<div class="item content">
+	<div class="container toparea">
+	
+		
+	
+		<div class="row text-center">
+	
+			{% for a  in about_data  %}
+			
+			
+			<div class="col-md-4">
+				<div class="col editContent">
+					<span class="numberstep"><i class="{{a.icon}}"></i></span>
+					<h3 class="numbertext">{{a.heading}}</h3>
+					<p>
+						{{a.description}}
+					</p>
+				</div>
+				<!-- /.col-md-4 -->
+			</div>
+			{% endfor %}
+			<!-- /.col-md-4 col -->
+	{% comment %} <div class="col-md-4 editContent">
+				<div class="col">
+					<span class="numberstep"><i class="fa fa-gift"></i></span>
+					<h3 class="numbertext">Pay with PayPal or Card</h3>
+					<p>
+						 Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+					</p>
+				</div>
+				<!-- /.col -->
+			</div>
+			<!-- /.col-md-4 col -->
+		<div class="col-md-4 editContent">
+				<div class="col">
+					<span class="numberstep"><i class="fa fa-download"></i></span>
+					<h3 class="numbertext">Get Instand Download</h3>
+					<p>
+						 Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+					</p>
+				</div>
+			</div> 
+		</div>
+
+	</div> {% endcomment %}
+ </div> 
+	
+	<!-- LATEST ITEMS =============================-->
+<section class="item content">
+	<div class="container">
+		<div class="underlined-title">
+			<div class="editContent">
+				<h1 class="text-center latestitems">LATEST ITEMS</h1>
+			</div>
+			<div class="wow-hr type_short">
+				<span class="wow-hr-h">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				</span>
+			</div>
+		</div>
+
+		
+		<div class="row" >
+			{% for n  in  product_data %}
+			<div class="col-md-4">
+				<div class="productbox">
+					<div class="fadeshop">
+						<div class="captionshop text-center" style="display: none;">
+							<h3>{{n.item_name}}</h3>
+							<p>
+								 {{n.item_desc}}
+							</p>
+							<p>
+								<a href="{% url 'cart'  %}" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i> Purchase</a>
+								<a href="{% url 'product'  %}?product={{n.id}}" class="learn-more detailslearn"><i class="fa fa-link"></i> Details</a>
+							</p>
+						</div>
+						<span class="maxproduct"><img src=/media/{{n.item_image}} alt=""></span>
+					</div>
+					<div class="product-details">
+						<a href="#">
+						<h1>{{n.item_tag}}</h1>
+						</a>
+						<span class="price">
+						<span class="edd_price"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+
+
+			{% comment %} <!-- /.productbox -->
+			<div class="col-md-4">
+				<div class="productbox">
+					<div class="fadeshop">
+						<div class="captionshop text-center" style="display: none;">
+							<h3>Item Name</h3>
+							<p>
+								 This is a short excerpt to generally describe what the item is about.
+							</p>
+							<p>
+								<a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i> Purchase</a>
+								<a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Details</a>
+							</p>
+						</div>
+						<span class="maxproduct"><img src="/static/images/product2.jpg" alt=""></span>
+					</div>
+					<div class="product-details">
+						<a href="#">
+						<h1>FastSell Theme</h1>
+						</a>
+						<span class="price">
+						<span class="edd_price">$49.00</span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<!-- /.productbox -->
+			<div class="col-md-4">
+				<div class="productbox">
+					<div class="fadeshop">
+						<div class="captionshop text-center" style="display: none;">
+							<h3>Item Name</h3>
+							<p>
+								 This is a short excerpt to generally describe what the item is about.
+							</p>
+							<p>
+								<a href="#" class="learn-more detailslearn"><i class="fa fa-shopping-cart"></i> Purchase</a>
+								<a href="#" class="learn-more detailslearn"><i class="fa fa-link"></i> Details</a>
+							</p>
+						</div>
+						<span class="maxproduct"><img src="/static/images/product2-3.jpg" alt=""></span>
+					</div>
+					<div class="product-details">
+						<a href="#">
+						<h1>Biscaya Theme</h1>
+						</a>
+						<span class="price">
+						<span class="edd_price">$49.00</span>
+						</span>
+					</div>
+				</div>
+			</div> {% endcomment %}
+		</div>
+	</div>
+</div>
+</section>
+
+
+<!-- BUTTON =============================-->
+<div class="item content">
+	<div class="container text-center">
+		<a href="shop.html" class="homebrowseitems">Browse All Products
+		<div class="homebrowseitemsicon">
+			<i class="fa fa-star fa-spin"></i>
+		</div>
+		</a>
+	</div>
+</div>
+<br/>
+
+
+<!-- AREA =============================-->
+<div class="item content">
+	<div class="container">
+		<div class="row">
+			{% for h in service_data %}
+			
+			
+			<div class="col-md-4">
+				<i class="{{h.icon}}"></i>
+				<div class="infoareawrap">
+					<h1 class="text-center subtitle">{{h.heading}}</h1>
+					<p>
+						{{h.description}}
+					</p>
+					<p class="text-center">
+						<a href="#">- Get in Touch -</a>
+					</p>
+				</div>
+			</div>
+			{% endfor %}
+			<!-- /.col-md-4 col -->
+			{% comment %} <div class="col-md-4">
+				<i class="fa fa-comments infoareaicon"></i>
+				<div class="infoareawrap">
+					<h1 class="text-center subtitle">Theme Support</h1>
+					<p>
+						 Theme support issues prevent the theme from working as advertised in the demo. This is a free and guaranteed service offered through our support forum which is found in each theme.
+					</p>
+					<p class="text-center">
+						<a href="#">- Select Theme -</a>
+					</p>
+				</div>
+			</div>
+			<!-- /.col-md-4 col -->
+			<div class="col-md-4">
+				<i class="fa fa-bullhorn infoareaicon"></i>
+				<div class="infoareawrap">
+					<h1 class="text-center subtitle">Hire Us</h1>
+					<p>
+						 If you wish to change an element to look or function differently than shown in the demo, we will be glad to assist you. This is a paid service due to theme support requests solved with priority.
+					</p>
+					<p class="text-center">
+						<a href="#">- Get in Touch -</a>
+					</p>
+				</div>
+			</div>
+		</div> {% endcomment %}
+	</div>
+</div>
+
+
+<!-- TESTIMONIAL =============================-->
+<div class="item content">
+	<div class="container">
+		
+		
+		{% for d in testi_data %}
+		
+	
+		<div class="col-md-10 col-md-offset-1">
+			<div class="slide-text">
+				<div>
+					<h2><span class="uppercase">{{d.heading}}</span></h2>
+					<img src="/media/{{d.image}}" alt="Awesome Support">
+					<p>
+						{{d.description}}
+					</p>
+					<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+				</div>
+				
+			</div>
+			
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+{% endblock  %}

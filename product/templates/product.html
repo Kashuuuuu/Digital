@@ -1,0 +1,70 @@
+
+	{% extends "base.html" %}
+
+{% block content %}
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="text-pageheader">
+					<div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.0s">
+						 Product Name
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</header>
+
+<!-- CONTENT =============================-->
+<section class="item content">
+<div class="container toparea">
+	<div class="underlined-title">
+		<div class="editContent">
+			<h1 class="text-center latestitems">Awesome Product</h1>
+		</div>
+		<div class="wow-hr type_short">
+			<span class="wow-hr-h">
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star"></i>
+			</span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<div class="productbox">
+				<img src= /media/{{product_data.0.item_image}} alt="">
+				<div class="clearfix">
+				</div>
+				<br/>
+				<div class="product-details text-left">
+					<p>
+						Your description here. Serenity is a highly-professional & modern website theme crafted with you, the user, in mind. This light-weight theme is generous, built with custom types and enough shortcodes to customize each page according to your project. You will notice some examples of pages in demo, but this theme can do much more.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<a href="{% url 'cart' %}?cart={{product_data.0.id}}" class="btn btn-buynow">Rs. {{product_data.0.item_price}} Purchase</a>
+			<div class="properties-box">
+				<ul class="unstyle">
+					
+
+					<li><b class="propertyname">Product Name:</b> {{product_data.0.item_name}}</li>
+					<li><b class="propertyname">Description:</b>  {{product_data.0.item_desc}}</li>
+					<li><b class="propertyname">Tag:</b>{{product_data.0.item_tag}} </li>
+
+				</ul>
+
+
+			</div>
+			
+		
+		</div>
+	</div>
+</div>
+</section>
+{% endblock  %}

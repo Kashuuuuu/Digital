@@ -1,0 +1,159 @@
+
+{% extends "base.html" %}
+
+	{% block content %}
+	
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="text-pageheader">
+					<div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.0s">
+						 Shopping Bag
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</header>
+
+<!-- CONTENT =============================-->
+<section class="item content">
+<div class="container toparea">
+	<div class="underlined-title">
+		<div class="editContent">
+			<h1 class="text-center latestitems">MAKE PAYMENT</h1>
+		</div>
+		<div class="wow-hr type_short">
+			<span class="wow-hr-h">
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star"></i>
+			</span>
+		</div>
+	</div>
+	<div id="edd_checkout_wrap" class="col-md-8 col-md-offset-2">
+		
+			<div id="edd_checkout_cart_wrap">
+				<table id="edd_checkout_cart" class="ajaxed">
+				<thead>
+				<tr class="edd_cart_header_row">
+					<th class="edd_cart_item_name">
+						S.no.
+					</th>
+					<th class="edd_cart_item_name">
+						Image
+					</th>
+					<th class="edd_cart_item_name">
+						Item Name
+				   </th>
+
+					<th class="edd_cart_item_price">
+						 Item Price
+					</th>
+
+					<th class="edd_cart_item_price">
+						Quantity
+				   </th><th class="edd_cart_item_price">
+					Total Price
+			   </th>
+				 <th class="edd_cart_actions">
+						 Actions
+					</th> 
+				</tr>
+				</thead>
+				<tbody>		
+					
+
+				
+					{% for pro,qunt in data  %}
+				<tr class="edd_cart_item" id="edd_cart_item_0_25" data-download-id="25">
+
+					<td class="edd_cart_item_price">
+						{{forloop.counter}}
+
+					</td> 
+
+					<td class="edd_cart_item_name">
+					
+					<div class="edd_cart_item_image">
+							<img width="25" height="25" src="/media/{{pro.0.item_image}}" alt="">
+						</div> 
+						<span class="edd_checkout_cart_item_title"></span>
+					</td>
+						<td class="edd_cart_item_price">
+						{{pro.0.item_name}}
+
+					</td> 
+					
+					<td class="edd_cart_item_price">
+						{{pro.0.item_price}}
+					</td>
+					<td class="edd_cart_item_price">
+
+
+
+					
+
+					<button  style="border:none">
+						 <a  href=" {% url 'update' %}?min={{pro.0.id}}">-</a> </button>{{qunt}}
+						 <button style="border:none"><a href=" {% url 'update' %}?mix={{pro.0.id}}" >+</a></button>
+				
+
+					</td>
+					<td class="edd_cart_item_price">
+						 {{pric}}
+					</td>
+
+					<td class="edd_cart_actions">
+						<a class="edd_cart_remove_item_btn" href="{% url 'delete' %}?rm={{pro.0.id}}">Remove</a>
+					</td> 
+					
+					{% endfor %}
+					
+						
+					</td>
+				</tr>
+
+				
+				</tbody>
+				<tfoot>
+				
+				<tr class="edd_cart_footer_row edd_cart_discount_row" style="display:none;">
+					<th colspan="" class="edd_cart_discount">
+					</th>
+				</tr>
+				<tr class="edd_cart_footer_row">
+				
+						
+					
+					<th colspan="6"lass="edd_cart_total ">
+						 Total: <span class="edd_cart_amount" data-subtotal="11.99" data-total="">{{totalprice}}</span>
+					</th>
+					
+				</tr>
+				<tr class="edd_cart_footer_row">
+					<th colspan="6">
+						<a class="edd_cart_footer_row edd_cart_discount_row" href=" {% url 'checkout' %}" style = "float:right">Checkout
+						</a>
+					</th>
+				</tr>
+				</tfoot>
+				</table>
+			</div>
+		
+		
+		</div>
+	</div>
+</div>
+</section>
+
+
+
+{% endblock  %}
+
+{% comment %} modal {% endcomment %}
+
+
+  

@@ -1,0 +1,76 @@
+
+
+{% extends "b.html" %}
+
+{% block content %}
+
+<div class="pd-20 card-box mb-30">
+    <div class="clearfix mb-20">
+        <div class="pull-left">
+            <h4 class="text-blue h4">Checkout Details</h4>
+           
+        </div>
+      
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">S.no.</th>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pro,pric,qunt in list  %}
+              <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <th><img width="25" height="25" src="/media/{{pro.0.item_image}}" alt=""></th>
+                <td>{{pro.0.item_name}}</td>
+                <td>{{pro.0.item_price}}</td>
+                <td>{{qunt}}</td>
+              
+            </tr>
+            {% endfor %}
+            {% comment %} <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td><span class="badge badge-secondary">Secondary</span></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td><span class="badge badge-success">Success</span></td>
+            </tr> {% endcomment %}
+        </tbody>
+    </table>
+    <div class="collapse collapse-box" id="basic-table" >
+        <div class="code-box">
+            <div class="clearfix">
+                <a href="javascript:;" class="btn btn-primary btn-sm code-copy pull-left"  data-clipboard-target="#basic-table-code"><i class="fa fa-clipboard"></i> Copy Code</a>
+                <a href="#basic-table" class="btn btn-primary btn-sm pull-right" rel="content-y"  data-toggle="collapse" role="button"><i class="fa fa-eye-slash"></i> Hide Code</a>
+            </div>
+            <pre><code class="xml copy-pre" id="basic-table-code">
+<table class="table">
+<thead>
+<tr>
+<th scope="col">#</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">1</th>
+</tr>
+</tbody>
+</table>
+            </code></pre>
+        </div>
+    </div>
+</div>	
+
+{% endblock  %}

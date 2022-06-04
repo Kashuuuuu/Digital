@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+	{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="text-pageheader">
+					<div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.0s">
+						 Sign Up
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</header>
+<!-- CONTENT =============================-->
+<section class="item content">
+<div class="container toparea">
+	<div class="underlined-title">
+		<div class="editContent">
+			<h1 class="text-center latestitems">Get in Touch</h1>
+		</div>
+		<div class="wow-hr type_short">
+			<span class="wow-hr-h">
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star"></i>
+			</span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<div class="done">
+				<div class="alert alert-success">
+					<button type="button" class="close" data-dismiss="alert">×</button>
+					Your message has been sent. Thank you!
+				</div>
+			</div>
+
+			{% if messages %}
+				
+				{% for message in messages %}
+					<b> {{ message }} </b>
+				{% endfor %}
+				
+			{% endif %} 
+
+			<form method="post" >
+				{% csrf_token %}
+				<div class="form">
+					<b style="color:#000033;">Username:	</b><br>
+					<input type="text" name="name" placeholder="Your Name *" style="width:400px"> <br>
+					<b style="color:#000033;">E-mail:	</b><br>
+					<input type="email" name="email" placeholder="Your E-mail Address *" style="width:400px"><br>
+					<b style="color:#000033;">Password:	</b><br>
+					<input type="password" name="password" placeholder="Your Password *" style="width:400px"><br>
+					<b style="color:#000033;">Repeat Password:	</b><br>
+
+					<input type="password" name=" repassword" placeholder="Your Repeat Password*" style="width:400px"><br> <br>
+
+					<input type="submit" class="clearfix btn" value="Sign Up" style=" background:#0d0d0d;color:white;font-weight:bold;">
+				
+				</div>
+
+			</form>
+		</div>
+	</div>
+</div>
+</div>
+</section>
+{% endblock  %}
